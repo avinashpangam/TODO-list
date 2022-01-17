@@ -1,0 +1,26 @@
+<%- include("header") -%>
+    <div class="box" id="heading">
+      <h1> <%= givenDay %> </h1>
+    </div>
+
+    <div class="box">
+        <% for (let i = 0; i < nextItems.length ; i++){ %>
+          <div class="item">
+            <input type="checkbox">
+            <p> <%= nextItems[i] %> </p>
+          </div>
+
+        <%  } %>
+
+        <form class="item" action="/" method="post">
+          <input type="text" name="listItem" placeholder="Enter Item" autofocus autocomplete="off">
+          <button type="submit" name="send" value = <%= givenDay %> >+</button>
+        </form>
+    </div>
+    <!-- <% if (givenDay === "Saturday" || givenDay === "Sunday"){ %>
+      <h1 class="red" >Today is <%= givenDay %></h1>
+    <% }else{ %>
+      <h1 class="purple" >Today is <%= givenDay %></h1>
+    <% } %> -->
+
+<%- include("footer") -%>
